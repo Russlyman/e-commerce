@@ -34,11 +34,11 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "hackathon-ecommerce-d74ffb09c08a.herokuapp.com",
+    "https://replicant-db3a8d30d60e.herokuapp.com",
     ".ws.codeinstitute-ide.net",
 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://hackathon-ecommerce-d74ffb09c08a.herokuapp.com', 'https://*.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://replicant-db3a8d30d60e.herokuapp.com', 'https://*.codeinstitute-ide.net']
 
 
 # Application definition
