@@ -1,1 +1,45 @@
 /* Custom CSS Here! */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+
+.hero .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; 
+}
+
+.hero h1 {
+    
+    font-size: 5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6347, #4b0082, #00bfff); /* Rainbow gradient */
+    background-size: 400% 400%;
+    animation: rainbow 5s ease infinite; /* Animation for the rainbow effect */
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.5rem; 
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
