@@ -1,14 +1,13 @@
-# Project Title
+# Replicant
 
 ## Overview
 
 ### Purpose
-A brief description of the project's purpose, what it aims to achieve, and the value it provides to the users.  
-**Guidance:** Begin filling out this section during Phase 1: Ideation & Initial Setup. Clearly articulate the main goal of your project, what it aims to achieve, and how it will provide value to your target audience.
+Replicant is an E-Commerce site for a clothing/ apparel brand aimed at bringing a boutique fashion collection lead by a futuristic/cyberpunk aesthtic mixed with vintage sensibilities inspired as the name suggests by films like "Bladerunner" and to a lesser extent "A Clockwork Orange".
+The idea is that grounding futurism with classical elements makes it both much more wearable and able to stand the test of time whilst still having the wow factor and edge of presenting something new to our audience and our customers. The site itself channels style and design conccepts from high end brands like Gucci; going for a minimalist chic with large clean hero image show off our products and make it easy and clear where the customer need to navigate to make their purchase and locate their interests.
 
 ### Target Audience
-Identify the target audience for your website and explain why this audience will benefit from the project.  
-**Guidance:** Use this section to identify who will benefit from your project and why. This should be informed by your user stories and overall project objectives.
+The target audience is anyone interested in fashion clothing and new looks.
 
 ## User Stories
 
