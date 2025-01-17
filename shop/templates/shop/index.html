@@ -1,5 +1,42 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<h1>Hello world!</h1>
+<!-- Hero Section -->
+<div class="hero bg-dark text-white text-center py-5" >
+    <img src="{% static 'images/hero.png' %}" class="img-fluid" alt="Hero Image">
+    <div class="container">
+        <h1 class="display-4">Replicant</h1>
+        <p class="lead">Explore the best products in your category</p>
+    </div>
+</div>
+<!-- Category Section -->
+<div class="container mt-5">
+
+    <h1 class="mb-4">{{ category.name }}</h1> 
+    {% if products %}
+        <div class="row">
+        {% for product in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/cat.png' %}" class="card-img-top" alt="{{ product.name }}">
+                    <div class="card-body d-flex flex-column">
+                        <a href="{% url 'shop:product' product.id %}" class="">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                        </a>
+                        <p class="card-text">{{ product.description }}</p>
+                        <p><strong>Price:</strong> ${{ product.price }}</p>
+                        <p><strong>Stock:</strong> {{ product.stock }}</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>No products found in this category.</p>
+    {% endif %}
+    
+</div>
+
 {% endblock content %}
