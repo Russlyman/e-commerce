@@ -25,13 +25,13 @@
                   {% if "placeholder" in category.image.url %}
                   <img
                     class="card-img-top"
-                    src="{% static 'images/default.jpg' %}"
+                    src="{% static 'images/cat.png' %}"
                     alt="placeholder image"
                   />
                   {% else %}
                   <img
                     class="card-img-top"
-                    src="{{ pcategory.image.url }}"
+                    src="{{ category.image.url }}"
                     alt="Photo of {{ category.name }}"
                   />
                   {% endif %}

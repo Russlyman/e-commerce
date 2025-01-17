@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from .models import *
 
 
@@ -89,3 +90,10 @@ def remove_from_wishlist(request, wishlist_id):
     wishlist_item = get_object_or_404(Wishlist, id=wishlist_id)
     wishlist_item.delete()
     return redirect('wishlist')
+
+@login_required
+def add_to_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    if not Wishlist.objects.filter(customer=request.user, product=product).exists():
+        Wishlist.objects.create(customer=request.user, product=product)
+    return redirect('product')
