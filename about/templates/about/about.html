@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-4 text-center">
+      <img src="{% static 'images/rutger.png' %}" class="profile-image" alt="the magician"/>
+    </div>
+    <div class="col-8">
+      <!-- Title goes between these h2 tags -->
+      <h2>{{ about.title }}</h2>
+      <!-- Content goes directly underneath this -->
+      {{ about.content | safe }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-right">
+      <!-- Updated on field goes in here -->
+
+      <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 my-5">
+      <h2>Replicant Mission Statement</h2>
+      <p>At Replicant, we're not just redefining fashion we're inventing the future. Inspired by the unparalleled genius of head designer and guru Jacobim Mugatu
+        (yes, THE creator of the piano key necktie), we are a beacon of innovation, style, and attitude. Our mission is to regivolutionize the way you see yourself
+         in the mirror, one couture masterpiece at a time. Fashion isn't just clothing—it's a state of mind. And at Replicant, we believe everyone deserves
+         a little more "Wow!" in their lives. We dare to combine the bold, the unexpected, and the borderline ridiculous into designs that turn heads, drop jaws,
+         and change the world. Every stitch, every fabric, every outrageous pattern is crafted with one purpose: to remind you that you're not just wearing 
+         fashion—you're wearing art. Whether you're strutting the catwalk or the crosswalk, you're always the star of the show.        
+        As Jacobim Mugatu himself says: “Being really, really, ridiculously good-looking is just the start.” With Mugatu Fashions, you're stepping into a
+         universe where anything is possible—especially if it's fabulous.       
+        Join us, and let's make the world a little more… derelicte.
+      </p>
+    </div>
+
+  </div>
+</div>
+{% endblock content %}

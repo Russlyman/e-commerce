@@ -1,13 +1,30 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import *
+from django.contrib import messages
 
 
 # Create your views here.
 def index(request):
     categories = Category.objects.all()
-    return render(request, "shop/index.html", {"categories": categories})
+        
+# Paginate the combined reviews
+
+    paginator = Paginator(categories, 6)  # Show 6 reviews per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+# Pass the paginated reviews to the template
+
+    context = {
+        'categories_list': page_obj,
+        'is_paginated': page_obj.has_other_pages(),
+    }
+    print(page_obj)
+    return render(request, 'shop/index.html', context)
 
 def product(request, product_id):
     product_query = get_object_or_404(Product, id=product_id)
@@ -97,3 +114,18 @@ def add_to_wishlist(request, product_id):
     if not Wishlist.objects.filter(customer=request.user, product=product).exists():
         Wishlist.objects.create(customer=request.user, product=product)
     return redirect('product')
+
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    messages.add_message(request, messages.SUCCESS, "Added {name} to basket!".format(name = product.name))
+
+    order = Order.objects.filter(customer=request.user, order_date__isnull=True).first()
+    order_product = OrderProduct.objects.filter(order = order, product = product).first()
+    if order_product:
+        order_product.quantity = order_product.quantity + 1
+    else:
+        order_product = OrderProduct.objects.create(order = order, product = product, quantity = 1)
+    
+    order_product.save()
+
+    return redirect("category", product.category.id)
