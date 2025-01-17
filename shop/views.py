@@ -1,4 +1,6 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from django.http import HttpResponse
 from .models import *
 from django.contrib import messages
@@ -7,7 +9,21 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     categories = Category.objects.all()
-    return render(request, "shop/index.html", {"categories": categories})
+        
+# Paginate the combined reviews
+
+    paginator = Paginator(categories, 6)  # Show 6 reviews per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+# Pass the paginated reviews to the template
+
+    context = {
+        'categories_list': page_obj,
+        'is_paginated': page_obj.has_other_pages(),
+    }
+    print(page_obj)
+    return render(request, 'shop/index.html', context)
 
 def product(request, product_id):
     product_query = get_object_or_404(Product, id=product_id)
