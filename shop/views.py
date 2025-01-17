@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.http import HttpResponse
 from .models import *
+from django.contrib import messages
 
 
 # Create your views here.
@@ -105,3 +106,18 @@ def remove_from_wishlist(request, wishlist_id):
     wishlist_item = get_object_or_404(Wishlist, id=wishlist_id)
     wishlist_item.delete()
     return redirect('wishlist')
+
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    messages.add_message(request, messages.SUCCESS, "Added {name} to basket!".format(name = product.name))
+
+    order = Order.objects.filter(customer=request.user, order_date__isnull=True).first()
+    order_product = OrderProduct.objects.filter(order = order, product = product).first()
+    if order_product:
+        order_product.quantity = order_product.quantity + 1
+    else:
+        order_product = OrderProduct.objects.create(order = order, product = product, quantity = 1)
+    
+    order_product.save()
+
+    return redirect("category", product.category.id)
