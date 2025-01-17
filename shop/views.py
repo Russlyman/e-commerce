@@ -79,3 +79,13 @@ def remove_from_cart(request, order_product_id):
     order_product.delete()
     return redirect('cart')
 
+def view_wishlist(request):
+    wishlist_items = Wishlist.objects.filter(customer=request.user)
+    return render(request, 'shop/wishlist.html', {
+        'wishlist_items': wishlist_items,
+    })
+
+def remove_from_wishlist(request, wishlist_id):
+    wishlist_item = get_object_or_404(Wishlist, id=wishlist_id)
+    wishlist_item.delete()
+    return redirect('wishlist')
