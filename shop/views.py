@@ -5,16 +5,17 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    return render(request, "shop/index.html")
+    categories = Category.objects.all()
+    return render(request, "shop/index.html", {"categories": categories})
 
 def product(request, product_id):
     product_query = get_object_or_404(Product, id=product_id)
     # reviews = product.ratings.all().order_by("-created_at")
     # rating_count = product.ratings.count()
     # avg_rating = product.ratings.aggregate(Avg('rating'))['rating__avg'] or 0
-    stars = range(1, 6)
-    user_rating = None
-    rating_form = None
+    # stars = range(1, 6)
+    # user_rating = None
+    # rating_form = None
 
     # if request.user.is_authenticated:
     #     user_rating = Rating.objects.filter(product=product, user=request.user).first()
@@ -35,11 +36,9 @@ def product(request, product_id):
     #         rating_form = RatingForm() if not user_rating else None
     return render(request, "shop/product.html", {"product": product_query})
 
-def item_category(request, category_id):
+def category(request, category_id):
     category = get_object_or_404(Category, id=category_id)
-    products = category.products.all() 
     
-    return render(request, 'shop/product.html', {
+    return render(request, 'shop/category.html', {
         'category': category,
-        'products': products,
     })
