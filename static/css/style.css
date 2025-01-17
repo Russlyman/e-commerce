@@ -195,17 +195,26 @@ body {
   text-decoration: none; /* Removes underline */
 }
 .social-link:hover {
-  color: #F39C12; /* Highlight color on hover */
+  color: #F39C12; 
   text-decoration: none; /* Ensures underline stays off */
 }
+.nav-item {
+  font-size: bold;
+  font-weight: 200;
+  background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6347, #4b0082, #00bfff); /* Rainbow gradient */
+  background-size: 200% 200%;
+  animation: rainbow 5s ease infinite; /* Animation for the rainbow effect */
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .nav-link {
-  color: #E81010; /* Default text color */
+  
   text-decoration: none; /* No underline */
   transition: color 0.3s ease; /* Smooth hover transition for color */
 }
 .nav-link:hover {
-  color: #CBA17B; /* Highlight text color on hover */
-  text-decoration: none; /* Keeps underline off */
+  /* color: #CBA17B;  */
+  /* text-decoration: none;  */
 }
 .nav-link.active {
   font-weight: bold; /* Bold text for the active state */
