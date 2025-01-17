@@ -53,7 +53,7 @@ def product(request, product_id):
     return render(request, "shop/product.html", {"product": product_query})
 
 def category(request, category_id):
-def item_category(request, category_id):
+
     # cat=Category.select_related("products")
     category = get_object_or_404(Category, id=category_id)
     
@@ -66,9 +66,11 @@ def view_cart(request):
     if not order:
         return HttpResponse("Your cart is empty.")
     order_products = OrderProduct.objects.filter(order=order)
+    total = sum(order_product.product.price * order_product.quantity for order_product in order_products)
     return render(request, 'shop/cart.html', {
         'order': order,
-        'order_products': order_products
+        'order_products': order_products,
+        'total': total,
     })
 
 # remove product from cart
