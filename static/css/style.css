@@ -43,3 +43,174 @@
         background-position: 0% 50%;
     }
 }
+
+body {
+  background-color: #F9FAFC;
+}
+.about-page {
+  background: #fff
+}
+.brand {
+  font-family: Lato, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #CBA17B;
+}
+.red-o {
+  color: #E81010;
+}
+.thin {
+  font-weight: 600;
+}
+.light-bg {
+  background-color: #fff;
+}
+.dark-bg {
+  background-color: #CBA17B;
+}
+.main-bg {
+  background-color: #000000;
+}
+.card {
+  border: none;
+  background-color: transparent;
+}
+.review-card {
+  background: #fff;
+  color: #000000;
+}
+.image-container {
+  position: relative;
+}
+.image-flash {
+  position: absolute;
+  bottom: 5%;
+  min-width: 30%;
+  left: -2px;
+  background-color: #188181;
+}
+.scale {
+  width: 100%;
+  height: auto;
+}
+.author {
+  color: white;
+  margin: 4px;
+  text-transform: uppercase;
+}
+.masthead {
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  height: 33vh;
+  width: 100%;
+}
+.masthead-text {
+  background-color: #484C52;
+  color: #CBA17B;
+  position: relative;
+}
+.masthead-image {
+  position: relative;
+  overflow: hidden;
+}
+.masthead-image:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 90%;
+  height: 100%;
+  width: 150%;
+  background: #445261;
+  -webkit-transform: skew(15deg);
+  -moz-transform: skew(15deg);
+  transform: skew(15deg);
+  z-index: 100;
+}
+.profile-image {
+  width: 75%;
+}
+.post-link {
+  text-decoration: none;
+  color: #CBA17B;
+}
+.post-link:hover,
+.page-link {
+  color: #E81010;
+}
+.post-title {
+  margin-top: 3%;
+  margin-left: 5%;
+}
+.post-subtitle {
+  margin-left: 5%;
+  color: lightgray;
+}
+.btn-signup,
+.btn-edit {
+  background-color: #188181;
+  color: #fff;
+}
+.btn-signup:hover,
+.btn-signup:active {
+  background-color: #fff;
+  color: #23BBBB;
+}
+.link {
+  color: #23BBBB;
+  text-decoration: none;
+}
+.link:hover,
+.link:active {
+  color: #445261;
+  text-decoration: underline;
+}
+.btn-like {
+  color: #E84610;
+  border: none;
+  background: transparent;
+}
+.btn-delete {
+  color: #fff;
+  background: #E81010;
+}
+.btn-like:hover,
+.btn-like:active {
+  color: #E81010;
+  background: transparent;
+  border: none;
+}
+.faded {
+  color: rgb(172, 175, 175);
+}
+.approval {
+  color: rgb(222, 146, 168);
+}
+.social-link {
+  color: #4267B2; /* Initial link color */
+  text-decoration: none; /* Removes underline */
+}
+.social-link:hover {
+  color: #F39C12; /* Highlight color on hover */
+  text-decoration: none; /* Ensures underline stays off */
+}
+.nav-link {
+  color: #E81010; /* Default text color */
+  text-decoration: none; /* No underline */
+  transition: color 0.3s ease; /* Smooth hover transition for color */
+}
+.nav-link:hover {
+  color: #CBA17B; /* Highlight text color on hover */
+  text-decoration: none; /* Keeps underline off */
+}
+.nav-link.active {
+  font-weight: bold; /* Bold text for the active state */
+  color: #CBA17B; /* Matches the hover color */
+}
+.navbar-toggler-icon {
+  background-color: #CBA17B !important;
+}
+.navbar-toggler:hover .navbar-toggler-icon {
+  background-color: blue !important;
+}

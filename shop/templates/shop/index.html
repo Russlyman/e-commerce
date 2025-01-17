@@ -14,36 +14,36 @@
 <div class="container-fluid">
   <div class="row">
     <!-- Review Entries Column -->
-    <div class="col-12 mt-3 left">
-      <div class="row">
+    <div class="col-12 mt-3">
+      <div class="row justify-content-center">
         {% for category in categories %}
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="image-container">
-                {% if "placeholder" in category.image.url %}
-                <img
-                  class="card-img-top"
-                  src="{% static 'images/default.jpg' %}"
-                  alt="placeholder image"
-                />
-                {% else %}
-                <img
-                  class="card-img-top"
-                  src="{{ pcategory.image.url }}"
-                  alt="Photo of {{ category.name }}"
-                />
-                {% endif %}
-              </div>
-              <a href="{% url 'category' category.id %}" class="post-link">
+        <div class="col-6 col-md-3">
+          <a href="{% url 'category' category.id %}" class="post-link">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="image-container">
+                  {% if "placeholder" in category.image.url %}
+                  <img
+                    class="card-img-top"
+                    src="{% static 'images/default.jpg' %}"
+                    alt="placeholder image"
+                  />
+                  {% else %}
+                  <img
+                    class="card-img-top"
+                    src="{{ pcategory.image.url }}"
+                    alt="Photo of {{ category.name }}"
+                  />
+                  {% endif %}
+                </div>
                 <h2 class="card-title">{{ category.name }}</h2>
-              </a>
-              <hr />
-              <p class="card-text text-muted h6">
-                {{ post.created_on|date:"F j, Y" }}
-              </p>
+                <hr />
+                <p class="card-text text-muted h6">
+                  {{ post.created_on|date:"F j, Y" }}
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         {% if forloop.counter|divisibleby:3 %}
       </div>
