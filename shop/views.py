@@ -92,17 +92,20 @@ def view_cart(request):
     })
 
 # remove product from cart
+@login_required
 def remove_from_cart(request, order_product_id):
     order_product = get_object_or_404(OrderProduct, id=order_product_id)
     order_product.delete()
     return redirect('cart')
 
+@login_required
 def view_wishlist(request):
     wishlist_items = Wishlist.objects.filter(customer=request.user)
     return render(request, 'shop/wishlist.html', {
         'wishlist_items': wishlist_items,
     })
 
+@login_required
 def remove_from_wishlist(request, wishlist_id):
     wishlist_item = get_object_or_404(Wishlist, id=wishlist_id)
     wishlist_item.delete()
@@ -115,6 +118,7 @@ def add_to_wishlist(request, product_id):
         Wishlist.objects.create(customer=request.user, product=product)
     return redirect('product')
 
+@login_required
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     messages.add_message(request, messages.SUCCESS, "Added {name} to basket!".format(name = product.name))
