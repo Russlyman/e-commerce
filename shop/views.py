@@ -116,7 +116,8 @@ def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     if not Wishlist.objects.filter(customer=request.user, product=product).exists():
         Wishlist.objects.create(customer=request.user, product=product)
-    return redirect('product')
+        messages.add_message(request, messages.SUCCESS, "Added {name} to wishlist!".format(name = product.name))
+    return redirect('product', product_id)
 
 @login_required
 def add_to_cart(request, product_id):
