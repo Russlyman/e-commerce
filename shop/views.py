@@ -13,7 +13,7 @@ def index(request):
         
 # Paginate the combined reviews
 
-    paginator = Paginator(categories, 6)  # Show 6 reviews per page
+    paginator = Paginator(categories, 8)  # Show 8 reviews per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
