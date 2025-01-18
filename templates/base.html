@@ -92,11 +92,13 @@
                             <i class="fas fa-heart"></i> 
                         </a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'cart' %}">
                             <i class="fas fa-shopping-cart"></i> 
                         </a>
                     </li>
+                    {% endif %}
                     
                 </ul>              
             </div>
