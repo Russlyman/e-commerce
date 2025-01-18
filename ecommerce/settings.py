@@ -85,6 +85,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "shop.middleware.SetOrderMiddleware"
 ]
 
 ROOT_URLCONF = "ecommerce.urls"
