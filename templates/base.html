@@ -3,7 +3,7 @@
 {% url 'about' as about_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
+{% load my_tags %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en" data-bs-theme="dark">
@@ -56,8 +56,14 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="#">Ranges</a>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Ranges</a>
+                      <ul class="dropdown-menu">
+                        {% get_categories as categories %}
+                        {% for category in categories %}
+                        <li><a class="dropdown-item" href="{% url 'category' category.id %}">{{ category.name }}</a></li>
+                        {% endfor %}
+                      </ul>
                     </li>
     
                     {% if user.is_authenticated %}
