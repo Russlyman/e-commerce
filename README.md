@@ -11,78 +11,257 @@ The target audience is anyone interested in fashion clothing and new looks.
 
 ## User Stories
 
-### Must-Have User Stories
-- **User Story 1:** Briefly describe the must-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the must-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
+### Must-Have User Stories:
 
-(Include all prioritized must-have features)  
-**Guidance:** Draft the user stories during Phase 1: Ideation & Initial Setup and update them as you complete Phase 2: Must User Stories Implementation & Testing. Document each must-have feature here along with its acceptance criteria.
+1. ##### Customer Registration 
+
+As a Customer I can **register an account** so that I can **make a purchase and use other registered only features of the site**
+
+##### Acceptance Criteria
+On giving an email I can register an account
+##### Tasks
+Implement registration form
+
+2. ##### Login/Log-out
+
+ As a Customer I can **Login and Log-out of the site and see my login status** so that I can **access my personal information and order history and know what account is using the site**
+
+##### Acceptance Criteria
+The Login/Logout screen is in place.
+There is a statement in the header that shows weather a user is logged in and if so which user.
+##### Tasks
+Create/alter the form for the Login/Logout in forms.py
+Create Login/Logout html
+
+3. ##### Navbar 
+
+As a customer I can **use a navbar** so that I can **easily navigate between all pages/features of the site**
+
+##### Acceptance Criteria
+A navbar is in place on all relevant pages
+The navbar is responsive to different screen-sizes
+##### Tasks
+Code navbar in base.html
+add bootstrap or other responsiveness using a burger icon etc
+
+4. ##### Home Page
+
+As a customer I can **see a clean easy to navigate homepage when I load the sites URL** so that I can **easily take in and move between the sites features leading to a fun shopping experience**
+
+##### Acceptance Criteria
+The homepage loads and looks good
+-The eye is drawn in a logical fashion around the home page
+##### Tasks
+Home page HTML in place
+Home page Styling via CSS in place
+Possibility of some Javascript for modals or Hero-image interactivity/ movement
+
+5. ##### Product range/Product Pagination
+
+As a customer I can **click a product range icon to see a list of all products in the range and likewise click a product to see a products features** so that I can **easily navigate the stores inventory and take in the details of any product I am interested in**
+
+##### Acceptance Criteria
+I can see Paginated Cards for product ranges on the Home page
+These lead to a product Range page with a paginated list of products that in turn lead to a product features page for each product
+##### Tasks
+Create Suitable product range html templates and views
+Create Suitable product information templates and views
+Style the range and product information pages with CSS
+Have a product model in models.py that has all fields needed for the product
+
+6. ##### Admin Manage Products
+
+As an admin **I want to be able to add, update or delete products** so that I can **manage the product catalog**
+
+##### Acceptance Criteria
+Acceptance_Criteria_1:The admin should be able to add new products with name, description, price, images, and category.
+Acceptance_Criteria_2 :The admin should be able to update product details (e.g., price, description).
+Acceptance_Criteria_3 :The admin should be able to remove products from the catalog.
+Acceptance_Criteria_3:The admin should be able to view a list of all products
+##### Tasks
+Create a product management page for admins
+Implement form to add new products
+Implement functionality to update product details.
+Implement functionality to delete products from the catalog.
+
+7. ##### The Cart
+
+As a customer I can **add products I want to buy to a cart** so that I can **checkout and purchase multiple items at the same time**
+
+##### Acceptance Criteria
+Product cart visible to customer and has link
+Customer can add items to cart on click
+##### Tasks
+Product Cart has separate page/modal with relevant form/html
+Add to Cart button is implemented as part of product detail html
+Relevant views and urls updated
 
 ### Should-Have User Stories
-- **User Story 1:** Briefly describe the should-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the should-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
 
-(Include all prioritized should-have features)  
-**Guidance:** Document the secondary features that you aim to implement in Phase 3: Should User Stories Implementation & Any Advanced Features. Include clear acceptance criteria for each.
+1. ##### Admin - Manage Orders
+
+As an Admin I can **view and manage all orders** so that I can **ensure timely processing and handle any issues**
+
+##### Acceptance Criteria
+Acceptance_Criteria_1 : The admin should be able to view a list of all orders.
+Acceptance_Criteria_2 : The admin should be able to filter orders by status (pending, completed)
+Acceptance_Criteria_3 :The admin should be able to update the order status (e.g., mark as shipped, complete)
+Acceptance_Criteria_4 : The admin should be able to view order details (products, customer, shipping address)
+Acceptance_Criteria_5: The admin should be able to refund or cancel orders
+##### Tasks
+Implement order management page for admins to view and filter orders.
+Implement order status management (mark as shipped, completed, etc.).
+Enable admins to view order details (products, customer information).
+Implement refund and order cancellation functionality.
+
+2. ##### Admin - Manage Inventory
+
+As an Admin I can **manage my product inventory** so that **I can keep track of stock levels, ensure products are available for sale, and update stock when needed.**
+
+##### Acceptance Criteria
+Acceptance_Criteria_1: The Admin should be able to view the current inventory levels for each product they have listed
+Acceptance_Criteria_2 : The Admin should be able to update the stock quantity for a specific product.
+Acceptance_Criteria_3 : The Admin should be able to mark products as out of stock when inventory reaches zero
+-Acceptance_Criteria_4 : The inventory management page should display important product details like name, price, current stock, and status (in stock or out of stock).
+-Acceptance_Criteria_5 : The system should ensure that customers cannot purchase products that are out of stock.
+##### Tasks
+Create a page where Admin can view the product inventory.
+Add a functionality where Admin can update the stock for individual products.
+Provide input fields for adding or subtracting stock numbers.
+Ensure that the stock is updated in the database after the Admin submits the changes.
+Provide the Admin with an option to mark products as out of stock when inventory hits zero.
+Ensure that out-of-stock products are no longer available for customers to purchase .
+Show an appropriate out of stock message on the product detail page if the product is unavailable.
+
+3. ##### About Page
+
+As a customer I can **See an About page** so that I can **view information about the business as a whole and its current fashion message/ ethos**
+
+##### Acceptance Criteria
+About page is viewable
+About page added to navbar and given update functionality
+##### Tasks
+-Make about page app separately
+
+Make about page html views and update urls
+Style about page in CSS
+make about page update functionality
 
 ### Could-Have User Stories
-- **User Story 1:** Briefly describe the could-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the could-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
 
-(Include any could-have features considered for future enhancements)  
-**Guidance:** Document any optional features that are nice to have but not essential.
+1. ##### Product Review
+
+As a customer I can **See a product review when looking at product details** so that I can **see what other customers experience and thoughts on this product were**
+
+##### Acceptance Criteria
+Product review is visible in product details page
+Customers are able to place product reviews when looking at a product
+##### Tasks
+Product review html added/integrated to product details html
+Product review forms.py updated to accept product reviews
+Admin capable of handling product review submission
+
+2. ##### Wish List
+
+As a customer I can **add products to a wish list** so that **even if I don't want to buy them now I can easily find them at a later point**
+
+##### Acceptance Criteria
+A wishlist page/pop-up is available with a clear button for the customer to look at the items list within
+Products have a wishlist button that a customer can register interest with by clicking
+##### Tasks
+Implement wish list forms/html
+Add button for "wish listing" to product detail html
+update views and urls as necessary
+
+3. ##### Shipment
+
+As a customer I can **have my order added to a shipment when I make a purchase** so that I can **be made aware when to expect the arrival of my purchased goods and track this process**
+
+##### Acceptance Criteria
+Shipment exists and is viewable
+Track shipment button implemented
+##### Tasks
+Make shipment Model
+add necessary shipment forms/ html
+add shipments button
+
 
 ## Design Decisions
 
 ### Wireframes
-Include wireframes for key sections of your website.  
-Briefly describe the design choices, including layout, colour schemes, and fonts.  
-**Guidance:** Start this section during Phase 1: Ideation & Initial Setup and update it throughout Phase 2 and Phase 3. Include digital wireframes created in Phase 1. Document the reasoning behind your layout choices, colour schemes, and font selections.
+
+Here are the basic wire-frames we used to establish the design for the Replicant site:
+
+![alt text](wireframe.png)
+
+As can be seen on the Home page we are going for a Hero Image to establish our brand that will sit above a series of cards for each category of clothing and apparel we intend to sell. The image has a clean header above it that uses responsive features to enable a burger icon to reduce nav-bar space taken on smaller screens. Our wirefram is for a phone/small tablet size device and will faeture the item categoty card in a 2x2 formation that will expand to a 3x2 or possibly even 4x2 formation to show more cards on larger screens. When a customer clicks an item category they are lead into a screen showing of all individual items in that category on cards givien a similar responsiveness to that used on the homepage and in turn when you click the cards for those individual items details will be displayed for those items.
 
 ### Accessibility Considerations
-Discuss how accessibility guidelines were adhered to, including colour contrast and alt text for images.  
-**Guidance:** Outline how you've incorporated accessibility into your design, ensuring that your project adheres to guidelines such as WCAG.
+
+We went for a bold colour contrasting theme with black backgrounds lit up by neons that should be the easiest possible to follow for those with visual impairment. We have also used a minimalist look which keeps features clean and easy to follow alongside playing into our futuristic high fashion aesthetic.
 
 ## AI Tools Usage
 
-### DALL-E
-Describe how DALL-E was used for image generation, including examples of successes and challenges.  
-**Guidance:** Specifically mention how you used DALL-E for image generation and the impact this had on your design process.
+### Chat-GPT
+
+Chat-Gpt was used to generate a lot of our fashion images and particularly those of individual items. To do this I fed it many photos from futuristic movies that we thought had cool styles and aesthetics. Often we asked it to generate shots of individual items from an outfit on plain backgrounds like the ones used on the Category Cards.
 
 ## Features Implementation
 
 ### Core Features (Must-Haves)
-- **Feature 1:** Description of the implemented feature.
-- **Feature 2:** Description of the implemented feature.
 
-(Include all must-have features)  
-**Guidance:** Use this section as you complete Phase 2: Must User Stories Implementation & Testing. Document all the must-have features you implemented, explaining how they align with the user stories and acceptance criteria.
+### Logo and navigation bar
+
+A responsive navigation bar is in place. Concentrating on 'mobile first' design, the navigation bar incorporates a clickable burger icon with a drop down menu on mobile. There is a burger icon at tablet size too, but when moving to monitor size the burger disappears and a navigation bar appears with options to navigate to pages; 'Home', 'About' or 'Create' and depending on the user login status also a 'Register' and 'Login' link or a 'Logout'. The nav bar also displays the user login status with the message 'You are not logged in' or 'You are logged in as XXXXX'. In the top left corner there is a clickable project logo that also acts as a 'Home' button. See wireframes and other screenshots to view these features or log in to the project.
+
+### Clear indication as to whether the user is logged in or out at all times
+
+As mentioned above the nav bar displays user login status with the message 'You are not logged in' or 'You are logged in as XXXXX'
+
+### Pagination
+
+This feature forms the list of 2x2 or 3x2 product ranges or products and generates the next and previous buttons dependent on the users position in the content.
+
+
+### Sign in form
+
+This form has a Django allauth template which has been modified to inherit from our base to take on the sites main styling.
+
+### Register form (Sign up)
+
+This form has a Django allauth template which has been modified to inherit from our base to take on the sites main styling.
+
+### Sign out page
+
+This form has a Django allauth template which has been modified to inherit from our base to take on the sites main styling.
+
+### Home Page
+
+Functions pretty much the same as it was conceptualised with the addition of some css styling shimmer animations to some of the titles and neon trim. It has a 2x2 Card view on phone screens and an 3x2 card view on larger screens.
+
+### Product Range Page
+
+Paginates a Card for all products within a specific range after their category has been selected on the main page
+
+### Product Detail Page
+
+When a product is clicked this displays any additional information fields necessary and in the future can be modified to see stock levels and pick between sizes and other option like colour variants for a given product.
+
 
 ### Advanced Features (Should-Haves)
-- **Feature 1:** Description of the implemented feature.
-- **Feature 2:** Description of the implemented feature.
 
-(Include all should-have features)  
-**Guidance:** Include any advanced features you implemented during Phase 3: Should User Stories Implementation & Any Advanced Features. Explain how these features enhance user experience and their alignment with the acceptance criteria.
+### Django alert messages
+
+Every time there is a change in data the user is alerted. For example when a review is created, or edited and the same for comments. Also there is a notification when the user logs in or out to confirm their action. These appear in the blank space in the middle of the navigation bar to be in the users eyeline when possible.
+
 
 ### Optional Features (Could-Haves)
-- **Feature 1:** Description of the implemented feature (if any).
-- **Feature 2:** Description of the implemented feature (if any).
 
-(Include any could-have features that were implemented or considered)  
-**Guidance:** If any could-have features were implemented, describe them here. This is an opportunity to showcase extra work done beyond the initial scope. But remember - keep it simple! Focus on the Must stories first. Could user story features are commonly earmarked for future project iterations.
+### Wishlist
 
-## AI Tools Usage
+Wishlist heart button functionality added
 
-### GitHub Copilot
-Describe how GitHub Copilot assisted in coding, including any challenges or adjustments needed.  
-**Guidance:** Reflect on how GitHub Copilot assisted in coding, particularly any challenges or adjustments that were needed to align with project goals.
+
 
 ## Testing and Validation
 
@@ -96,7 +275,41 @@ Discuss the validation process for HTML and CSS using W3C and Jigsaw validators.
 Include the results of the validation process.  
 **Guidance:** Document your use of W3C and Jigsaw validators to ensure your HTML and CSS meet web standards. Include any errors or warnings encountered and how they were resolved.
 
-## AI Tools Usage
+## Technology used
+
+### Languages and framework
+
+- [HTML5](https://developer.mozilla.org/en-US/docs/Learn/HTML "link to html mozilla documentation")
+  was used to create content and structure
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS "link to css mozilla documentation")
+  was used to add custom styles
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript "link to javascript mozilla documentation") was used to dynamically reset the comment form if the reset button was clicked and to show a modal when the edit comment button was clicked
+- [Django](https://www.djangoproject.com/ "link to django docs homepage") was the python framework used to develop the site
+
+### Database
+
+- [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/ "link to postgresql from code institute") was used as the PostgreSQL database for this project
+
+### Technologies and tools
+
+- [Gitpod](https://www.gitpod.io/ "link to gitpod website") was used as the ide for this whole project
+- [Cloudinary](https://cloudinary.com/ "link to cloudinary homepage") was used to host images
+- [GitHub](https://github.com/ "link to github webpage") was used to store the code files, README files and assets
+- [Git](https://git-scm.com/ "link to official git website") was used as a version control software to commit and push the code to the GitHub repository
+- [Heroku](https://id.heroku.com/login "link to Heroku login") was used to deploy the project
+- [lucid chart](https://https://www.lucidchart.com/pages/er-diagrams/ "limk to lucidchart website") was used to make a diagram of the database schema.
+- [Bootstrap](https://getbootstrap.com/ "link to official bootstrap website") was used to quickly layout, position and size critical website features
+- [Balsamiq](https://balsamiq.com/wireframes/ "link to official balsamiq website") was used in early planning to map out wireframes
+- [Google Fonts](https://fonts.google.com/ "link to official google fonts website") was used to import fonts
+- [Favicon Generator](https://favicon.io/favicon-generator/ "link to official favicon generator website") was used to make an 'S' shaped favicon
+- [Font Awesome](https://fontawesome.com/ "link to official font awesome website") was used for all icons
+- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/overview/ "Link to official chrome developer tools website") was used for lighthouse testing, debugging and consistently checking responsiveness
+- [W3C Markup Validator](https://validator.w3.org/ "link to official html validator") was used to validate all live html
+- [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/ "link to official css validator") was used to validate CSS code
+- [JS Hint](https://jshint.com/ "link to official javascript validator") was used to validate JavaScript code
+- [Code Institute Python Linter](https://pep8ci.herokuapp.com/ "link to official python validator") was used to validate all python code
+- [Django Summernote](https://pypi.org/project/django-summernote/ "link to official summernote website") was used. This is a rich text editor plugin for Django
+- [Chat-GPT](https://chat.openai.com/ "link to chat gpt") was used to create the fashion images and product content.
 
 ### GitHub Copilot
 Brief reflection on the effectiveness of using AI tools for debugging and validation.  
@@ -104,16 +317,54 @@ Brief reflection on the effectiveness of using AI tools for debugging and valida
 
 ## Deployment
 
-### Deployment Process
-Briefly describe the deployment process to GitHub Pages or another cloud platform.  
-Mention any specific challenges encountered during deployment.  
-**Guidance:** Describe the steps you took to deploy your website during Phase 4: Final Testing, Debugging & Deployment, including any challenges encountered.
+All code for this project was written in Gitpod as the integrated development environment. GitHub was used for version control, and the application was deployed to Heroku from GitHub.
 
-## AI Tools Usage
+### Pre deployment
 
-### Reflection
-Describe the role AI tools played in the deployment process, including any benefits or challenges.  
-**Guidance:** Reflect on how AI tools assisted with the deployment process, particularly how they streamlined any tasks or presented challenges.
+To ensure a successful deployment to Heroku, the following practices are to be followed (Experience from previous Django projects):
+
+- **Requirements File:** The `requirements.txt` file must be kept up to date to ensure all imported Python modules are configured correctly for Heroku.
+- **Procfile:** A `Procfile` was added to configure the application as a Gunicorn web app on Heroku.
+- **Allowed Hosts:** In `settings.py`, the `ALLOWED_HOSTS` list was configured to include the Heroku app name and `localhost`. Example format:
+    ```python
+    ALLOWED_HOSTS = ['your-app-name.herokuapp.com', 'localhost']
+    ```
+- **Environment Variables:** All sensitive data such as the `DATABASE_URL`, `CLOUDINARY_URL`, and `SECRET_KEY` were added to the `.env` file, which is ignored by Git using `.gitignore`. These variables are added to Heroku manually through the Config Vars section.
+
+### Deploying with heroku
+
+The steps for deploying to Heroku are as follows (Experience from previous Django projects):
+
+1. **Create New App:** Log in to your Heroku account and click on the "Create New App" button.
+2. **App Name:** Choose a unique name for your app.
+3. **Select Region:** Choose the appropriate region (Europe was selected for this project).
+4. **Create App:** Click the "Create App" button to proceed.
+5. **Deployment Method:** In the "Deploy" tab, select GitHub as the deployment method.
+6. **Connect to GitHub:** Search for the repository name and click "Connect".
+7. **Manual or Automatic Deployment:** Select either manual or automatic deployment. Ensure the main branch is selected for deployment.
+8. **Config Vars:** In the "Settings" tab, click "Reveal Config Vars" and input the required environment variables.
+9. **Buildpack:** Select Node.js and Python as the buildpacks for your project.
+10. **Deploy:** Once the configuration is complete, click the "Deploy Branch" button. After successful deployment, a "View" button will appear to take you to the live site.
+
+Link to live website:[True Review](https://true-review-86503744e159.herokuapp.com)
+
+### Fork this repository:
+
+- Go to the GitHub repository
+- Click on the Fork button in the upper right-hand corner
+
+### Clone this repository:
+
+- Go to the GitHub repository
+- Click the Code button near the top of the page
+- Select 'HTTPS', 'SSH', or 'Github CLI', depending on how you would like to clone
+- Click the copy button to copy the URL to your clipboard
+- Open Git Bash
+- Change the current working directory to where you want the cloned directory
+- Type git clone and paste the URL ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+- Press enter to create your clone locally
+
+Note: The difference between clone and fork is, you need permissions to push back to the original from a clone, but not a fork because a fork will be completely your own new project.
 
 ## Reflection on Development Process
 

@@ -13,7 +13,7 @@ def index(request):
         
 # Paginate the combined reviews
 
-    paginator = Paginator(categories, 6)  # Show 6 reviews per page
+    paginator = Paginator(categories, 8)  # Show 8 reviews per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -79,10 +79,9 @@ def category(request, category_id):
         'category': category,
     })
 
+@login_required
 def view_cart(request):
-    order = Order.objects.filter(customer=request.user, order_date__isnull=True).first()
-    if not order:
-        return HttpResponse("Your cart is empty.")
+    order = Order.objects.filter(id=request.session["order"]).first()
     order_products = OrderProduct.objects.filter(order=order)
     total = sum(order_product.product.price * order_product.quantity for order_product in order_products)
     return render(request, 'shop/cart.html', {
@@ -92,17 +91,20 @@ def view_cart(request):
     })
 
 # remove product from cart
+@login_required
 def remove_from_cart(request, order_product_id):
-    order_product = get_object_or_404(OrderProduct, id=order_product_id)
+    order_product = get_object_or_404(OrderProduct, id=order_product_id, order=request.session["order"])
     order_product.delete()
     return redirect('cart')
 
+@login_required
 def view_wishlist(request):
     wishlist_items = Wishlist.objects.filter(customer=request.user)
     return render(request, 'shop/wishlist.html', {
         'wishlist_items': wishlist_items,
     })
 
+@login_required
 def remove_from_wishlist(request, wishlist_id):
     wishlist_item = get_object_or_404(Wishlist, id=wishlist_id)
     wishlist_item.delete()
@@ -113,13 +115,15 @@ def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     if not Wishlist.objects.filter(customer=request.user, product=product).exists():
         Wishlist.objects.create(customer=request.user, product=product)
-    return redirect('product')
+        messages.add_message(request, messages.SUCCESS, "Added {name} to wishlist!".format(name = product.name))
+    return redirect('product', product_id)
 
+@login_required
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     messages.add_message(request, messages.SUCCESS, "Added {name} to basket!".format(name = product.name))
 
-    order = Order.objects.filter(customer=request.user, order_date__isnull=True).first()
+    order = Order.objects.filter(id=request.session["order"]).first()
     order_product = OrderProduct.objects.filter(order = order, product = product).first()
     if order_product:
         order_product.quantity = order_product.quantity + 1
