@@ -13,7 +13,7 @@ The target audience is anyone interested in fashion clothing and new looks.
 
 ### Must-Have User Stories:
 
-1. #####Customer Registration 
+1. ##### Customer Registration 
 
 As a Customer I can **register an account** so that I can **make a purchase and use other registered only features of the site**
 
@@ -43,12 +43,6 @@ The navbar is responsive to different screen-sizes
 ##### Tasks
 Code navbar in base.html
 add bootstrap or other responsiveness using a burger icon etc
-
-### Should-Have User Stories
-- **User Story 1:** Briefly describe the should-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
-- **User Story 2:** Briefly describe the should-have feature.  
-  **Acceptance Criteria:** List the criteria that define the successful implementation of this user story.
 
 4. ##### Home Page
 
@@ -200,7 +194,7 @@ Here are the basic wire-frames we used to establish the design for the Replicant
 
 ![alt text](wireframe.png)
 
-As can be seen on the Home page we are going for a Hero Image to establish our brand that will sit above a sries of cards for each category of clothing and apparel we intend to sell. The image has a clean header above it that uses responsive features to enable a burger icon to reduce nav-bar space taken on smaller screens. Our wirefram is for a phone/small tablet size device and will faeture the item categoty card in a 2x2 formation that will expand to a 3x2 or possibly even 4x2 formation to show more cards on larger screens. When a customer clicks an item category they are lead into a screen showing of all individual items in that category on cards givien a similar responsiveness to that used on the homepage and in turn when you click the cards for those individual items details will be displayed for those items.
+As can be seen on the Home page we are going for a Hero Image to establish our brand that will sit above a series of cards for each category of clothing and apparel we intend to sell. The image has a clean header above it that uses responsive features to enable a burger icon to reduce nav-bar space taken on smaller screens. Our wirefram is for a phone/small tablet size device and will faeture the item categoty card in a 2x2 formation that will expand to a 3x2 or possibly even 4x2 formation to show more cards on larger screens. When a customer clicks an item category they are lead into a screen showing of all individual items in that category on cards givien a similar responsiveness to that used on the homepage and in turn when you click the cards for those individual items details will be displayed for those items.
 
 ### Accessibility Considerations
 
@@ -231,15 +225,27 @@ This feature forms the list of 2x2 or 3x2 product ranges or products and generat
 
 ### Sign in form
 
-For the security forms at the moment I have django generics but I plan to replace the with crispy forms the moment i get time.
+This form has a Django allauth template which has been modified to inherit from our base to take on the sites main styling.
 
 ### Register form (Sign up)
 
-For the security forms at the moment I have django generics but I plan to replace the with crispy forms the moment i get time.
+This form has a Django allauth template which has been modified to inherit from our base to take on the sites main styling.
 
 ### Sign out page
 
-For the security forms at the moment I have django generics but I plan to replace the with crispy forms the moment i get time.
+This form has a Django allauth template which has been modified to inherit from our base to take on the sites main styling.
+
+### Home Page
+
+Functions pretty much the same as it was conceptualised with the addition of some css styling shimmer animations to some of the titles and neon trim. It has a 2x2 Card view on phone screens and an 3x2 card view on larger screens.
+
+### Product Range Page
+
+Paginates a Card for all products within a specific range after their category has been selected on the main page
+
+### Product Detail Page
+
+When a product is clicked this displays any additional information fields necessary and in the future can be modified to see stock levels and pick between sizes and other option like colour variants for a given product.
 
 
 ### Advanced Features (Should-Haves)
@@ -250,6 +256,10 @@ Every time there is a change in data the user is alerted. For example when a rev
 
 
 ### Optional Features (Could-Haves)
+
+### Wishlist
+
+Wishlist heart button functionality added
 
 
 
