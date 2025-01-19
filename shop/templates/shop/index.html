@@ -18,16 +18,16 @@
           <a href="{% url 'category' category.id %}" class="post-link">
             <div class="card mb-4">
               <div class="card-body">
-                <div class="image-container">
+                <div class="image-container ratio ratio-1x1">
                   {% if "placeholder" in category.image.url %}
                   <img
-                    class="card-img-top"
+                    class="card-img-top zoom-image"
                     src="{% static 'images/cat.png' %}"
                     alt="placeholder image"
                   />
                   {% else %}
                   <img
-                    class="card-img-top"
+                    class="card-img-top zoom-image"
                     src="{{ category.image.url }}"
                     alt="Photo of {{ category.name }}"
                   />
