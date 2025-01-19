@@ -2,7 +2,7 @@
 
 (Developer: Geoff Fletcher, Inder Kumar, Meryem Essalhi, Ross Elliman )
 
-![Replicant am i responive](https://github.com/user-attachments/assets/d282bf00-17f1-4985-b918-d006d3069564)
+![Replicant am i responive]![Am i reponsive](https://github.com/user-attachments/assets/8845f8c1-9314-49db-b462-0720d35e5183)
 
 
 ## Live website
