@@ -13,14 +13,14 @@ def index(request):
         
 # Paginate the combined reviews
 
-    paginator = Paginator(categories, 8)  # Show 8 reviews per page
+    paginator = Paginator(categories, 6)  # Show 8 reviews per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
 # Pass the paginated reviews to the template
 
     context = {
-        'categories_list': page_obj,
+        'page_obj': page_obj,
         'is_paginated': page_obj.has_other_pages(),
     }
     print(page_obj)

@@ -13,7 +13,7 @@
     <!-- Review Entries Column -->
     <div class="col-12 mt-3">
       <div class="row justify-content-center">
-        {% for category in categories_list %}
+        {% for category in page_obj %}
         <div class="col-6 col-md-3">
           <a href="{% url 'category' category.id %}" class="post-link">
             <div class="card mb-4">
@@ -35,9 +35,6 @@
                 </div>
                 <h2 class="card-title">{{ category.name }}</h2>
                 <hr />
-                <p class="card-text text-muted h6">
-                  {{ post.created_on|date:"F j, Y" }}
-                </p>
               </div>
             </div>
           </a>
@@ -60,7 +57,8 @@
           &laquo; PREV
         </a>
       </li>
-      {% endif %} {% if page_obj.has_next %}
+      {% endif %}
+      {% if page_obj.has_next %}
       <li class="page-item">
         <a
           class="page-link"
