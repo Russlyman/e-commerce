@@ -1,14 +1,11 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <!-- Hero Section -->
-<div class="hero bg-dark text-white text-center py-5">
-  <img
-    src="{% static 'images/hero.png' %}"
-    class="img-fluid"
-    alt="Hero Image"
-  />
-  <div class="container">
-    <h1 class="display-4">Replicant</h1>
-    <p class="lead">Explore the best products in your category</p>
+<div class="hero text-white text-center py-5 d-flex justify-content-center align-items-center">
+  <div class="container text-center">
+    <!-- Text Section -->
+    <h1 class="display-3 font-weight-bold mb-4 text-shadow">Replicant</h1>
+    <p class="lead mb-4 orange">Explore the best products in your category</p>
+   
   </div>
 </div>
 <div class="container-fluid">
@@ -16,7 +13,7 @@
     <!-- Review Entries Column -->
     <div class="col-12 mt-3">
       <div class="row justify-content-center">
-        {% for category in categories %}
+        {% for category in categories_list %}
         <div class="col-6 col-md-3">
           <a href="{% url 'category' category.id %}" class="post-link">
             <div class="card mb-4">
@@ -47,7 +44,7 @@
         </div>
         {% if forloop.counter|divisibleby:3 %}
       </div>
-      <div class="row">{% endif %} {% endfor %}</div>
+      <div class="row justify-content-center">{% endif %} {% endfor %}</div>
     </div>
   </div>
   {% if is_paginated %}

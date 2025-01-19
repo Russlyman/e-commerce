@@ -5,7 +5,8 @@
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 400px;
+    width: 100%;
 }
 
 .hero .hero-content {
@@ -19,7 +20,7 @@
 
 .hero h1 {
     
-    font-size: 5rem;
+    font-size: 8rem;
     font-weight: bold;
     background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6347, #4b0082, #00bfff); /* Rainbow gradient */
     background-size: 400% 400%;
@@ -29,7 +30,16 @@
 }
 
 .hero p {
-    font-size: 1.5rem; 
+    font-size: 3rem; 
+    text-transform : uppercase;
+}
+.orange {
+  color: #B0B0B0; 
+  font-size: 2rem;
+  background: linear-gradient(145deg, #dcdcdc, #e6e6e6); /* Subtle gradient for depth */
+  color: transparent; 
+  background-clip: text; /* Apply the gradient only to the text */
+  -webkit-background-clip: text;
 }
 .img-small {
     width: 50px;   
@@ -57,10 +67,14 @@ body {
   font-family: Lato, sans-serif;
   font-size: 2rem;
   font-weight: 900;
-  color: #CBA17B;
+  background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6347, #4b0082, #00bfff); /* Rainbow gradient */
+  background-size: 400% 400%;
+  animation: rainbow 5s ease infinite; /* Animation for the rainbow effect */
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .red-o {
-  color: #E81010;
+  color: #31e511;
 }
 .thin {
   font-weight: 600;
@@ -201,28 +215,25 @@ body {
 .nav-item {
   font-size: bold;
   font-weight: 200;
-  background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6347, #4b0082, #00bfff); /* Rainbow gradient */
-  background-size: 200% 200%;
-  animation: rainbow 5s ease infinite; /* Animation for the rainbow effect */
-  -webkit-background-clip: text;
-  color: transparent;
+ 
 }
+/* Adding a glowing animation */
+
+
+.nav-link:hover {
+  color: #ff007f; /* Neon pink color on hover */
+  text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f, 0 0 40px #ff00b3; /* Glowing neon pink */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
 .nav-link {
   
-  text-decoration: none; /* No underline */
-  transition: color 0.3s ease; /* Smooth hover transition for color */
+  color: #00f; 
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out; 
 }
-.nav-link:hover {
-  /* color: #CBA17B;  */
-  /* text-decoration: none;  */
-}
-.nav-link.active {
-  font-weight: bold; /* Bold text for the active state */
-  color: #CBA17B; /* Matches the hover color */
-}
-.navbar-toggler-icon {
-  background-color: #CBA17B !important;
-}
+
 .navbar-toggler:hover .navbar-toggler-icon {
   background-color: blue !important;
 }
