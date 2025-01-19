@@ -99,6 +99,11 @@ body {
 .image-container {
   position: relative;
 }
+.zoom-image {
+  object-fit: cover; /* Ensures the image fills the container without stretching */
+  width: 100%;       /* Ensures the image scales with the container */
+  height: 100%;      /* Ensures the image scales with the container */
+}
 .image-flash {
   position: absolute;
   bottom: 5%;
