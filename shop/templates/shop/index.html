@@ -18,7 +18,7 @@
           <a href="{% url 'category' category.id %}" class="post-link">
             <div class="card mb-4">
               <div class="card-body">
-                <div class="image-container ratio ratio-1x1">
+                <div class="image-container ratio ratio-1x1 mb-3">
                   {% if "placeholder" in category.image.url %}
                   <img
                     class="card-img-top zoom-image"
@@ -33,7 +33,7 @@
                   />
                   {% endif %}
                 </div>
-                <h2 class="card-title">{{ category.name }}</h2>
+                <h2 class="card-title text-center">{{ category.name }}</h2>
                 <hr />
               </div>
             </div>

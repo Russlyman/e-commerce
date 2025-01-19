@@ -23,7 +23,7 @@ def index(request):
         'page_obj': page_obj,
         'is_paginated': page_obj.has_other_pages(),
     }
-    print(page_obj)
+
     return render(request, 'shop/index.html', context)
 
 def product(request, product_id):
@@ -74,9 +74,17 @@ def category(request, category_id):
 
     # cat=Category.select_related("products")
     category = get_object_or_404(Category, id=category_id)
+
+    paginator = Paginator(category.products.all(), 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+# Pass the paginated reviews to the template
     
     return render(request, 'shop/category.html', {
         'category': category,
+        'page_obj': page_obj,
+        'is_paginated': page_obj.has_other_pages(),
     })
 
 @login_required
