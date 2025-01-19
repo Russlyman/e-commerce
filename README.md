@@ -1,5 +1,14 @@
 # Replicant
 
+(Developer: Geoff Fletcher, Inder Kumar, Meryem Essalhi, Ross Elliman )
+
+![Replicant am i responive](https://github.com/user-attachments/assets/d282bf00-17f1-4985-b918-d006d3069564)
+
+
+## Live website
+
+Link to live website:[Replicant](https://replicant-db3a8d30d60e.herokuapp.com/)
+
 ## Overview
 
 ### Purpose
@@ -266,14 +275,16 @@ Wishlist heart button functionality added
 ## Testing and Validation
 
 ### Testing Results
-Summarize the results of testing across different devices and screen sizes.  
-Mention any issues found and how they were resolved.  
-**Guidance:** Summarize the results of your testing across various devices using tools like Chrome DevTools, as outlined in Phase 2. Mention any issues found and how they were resolved.
+
+We used our team to manually test all views and forms in order to determin that our functionality was complete and without error
 
 ### Validation
-Discuss the validation process for HTML and CSS using W3C and Jigsaw validators.  
-Include the results of the validation process.  
-**Guidance:** Document your use of W3C and Jigsaw validators to ensure your HTML and CSS meet web standards. Include any errors or warnings encountered and how they were resolved.
+
+All code has been validated through:
+- **HTML**: [W3C Markup Validator](https://validator.w3.org/).
+  Each page had its html put through from viewing its source on the websites live preview the results are stored [here.](./TESTING.md) As can be seen each page passed the test with review detail page returning 2 errors both on buttons that would like to have the class comment_id changed to a 'base data' style class but due to how close I am to the submission deadline I will deal with that post-submission since it does not interefere with the smooth running of the project.
+  
+- **CSS**: [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 
 ## Technology used
 
@@ -368,20 +379,26 @@ Note: The difference between clone and fork is, you need permissions to push bac
 
 ## Reflection on Development Process
 
-### Successes
-Effective use of AI tools, including GitHub Copilot and DALL-E, and how they contributed to the development process.
-
 ### Challenges
-Describe any challenges faced when integrating AI-generated content and how they were addressed.
+
+The Cart was probaly the most challenging element to get right
 
 ### Final Thoughts
-Provide any additional insights gained during the project and thoughts on the overall process.  
-**Guidance:** Begin drafting reflections during Phase 1 and update throughout the project. Finalize this section after Phase 4. Highlight successes and challenges, particularly regarding the use of AI tools, and provide overall insights into the project.
 
-## Code Attribution
-Properly attribute any external code sources used in the project (excluding GitHub Copilot-generated code).  
-**Guidance:** Document any external code sources used throughout the entire project, especially during Phase 2 and Phase 3. Exclude GitHub Copilot-generated code from attribution.
+Writing an E-commerce store for the first time in the space of a Hackathon was definitely a challenge; as a result there were several features we would certainly add if we had more time which were:
 
-## Future Improvements
-Briefly discuss potential future improvements or features that could be added to the project.  
-**Guidance:** Reflect on potential enhancements that could be made to the project after Phase 4: Final Testing, Debugging & Deployment. These could be Could user story features you didn’t have time to implement or improvements based on testing feedback.
+Linking payment functionality with a payment API such as Stripe
+Allowing for generation and tracking of the shipment of goods to the customer
+Allowing the customer to input their dimensions and size requirements which would lead to being able to present products to them in sizes appropriate to them and to pre-populate their size selections where appropriate.
+Havcing a product system that dealt with sizing of products and alterable styles settings.
+
+### Acknowledgements
+
+Thanks to all of our CI Bootcamp members and primarily our coding team: Ross Elliman, Meryem Essalhi, Inder Kumar and Geoff Fletcher whose support and knowledge allowed this project to be completed in the time limit.
+
+
+
+
+
+
+
