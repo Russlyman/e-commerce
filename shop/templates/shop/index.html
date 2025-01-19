@@ -1,14 +1,11 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <!-- Hero Section -->
-<div class="hero bg-dark text-white text-center py-5">
-  <img
-    src="{% static 'images/hero.png' %}"
-    class="img-fluid"
-    alt="Hero Image"
-  />
-  <div class="container">
-    <h1 class="display-4">Replicant</h1>
-    <p class="lead">Explore the best products in your category</p>
+<div class="hero text-white text-center py-5 d-flex justify-content-center align-items-center">
+  <div class="container text-center">
+    <!-- Text Section -->
+    <h1 class="display-3 font-weight-bold mb-4 text-shadow">Replicant</h1>
+    <p class="lead mb-4 orange">Explore the best products in your category</p>
+   
   </div>
 </div>
 <div class="container-fluid">
@@ -21,16 +18,16 @@
           <a href="{% url 'category' category.id %}" class="post-link">
             <div class="card mb-4">
               <div class="card-body">
-                <div class="image-container">
+                <div class="image-container ratio ratio-1x1">
                   {% if "placeholder" in category.image.url %}
                   <img
-                    class="card-img-top"
+                    class="card-img-top zoom-image"
                     src="{% static 'images/cat.png' %}"
                     alt="placeholder image"
                   />
                   {% else %}
                   <img
-                    class="card-img-top"
+                    class="card-img-top zoom-image"
                     src="{{ category.image.url }}"
                     alt="Photo of {{ category.name }}"
                   />
